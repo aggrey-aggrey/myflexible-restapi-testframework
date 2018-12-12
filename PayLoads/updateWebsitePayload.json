@@ -1,0 +1,28 @@
+{
+	"name": "John Doe publisher",
+	"contact": {
+		"name": "John ",
+		"surname": "Doe",
+		"city": "San Diego",
+		"state": "California",
+		"address": "One demo circle",
+		"country": "United States",
+		"zip": "47389",
+		"email": "amazing@cccom.com",
+		"phone": "489-489-2398",
+		"fax": "329-329-2093"
+	},
+	"billing":{
+		"name": "John",
+		"surname": "Doe",
+		"city": "San Diego",
+		"state": "California",
+		"address": "One demo circle",
+		"country": "United States",
+		"zip": "47389",
+		"email": "amazing@cccom.com",
+		"phone": "489-489-2398",
+		"fax": "329-329-2093"
+	},
+	"ein": "32-2467432"
+}
