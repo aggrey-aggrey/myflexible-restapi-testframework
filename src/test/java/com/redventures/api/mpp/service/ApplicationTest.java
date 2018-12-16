@@ -9,27 +9,20 @@ public class ApplicationTest {
 
 	@Test
 	public void applyAsAdvertiser() {
-		strResponse = Websites.addWebsite(2, "addwebsitePayload.json");
+
+		strResponse = Application.applyForAdvertiser("applyAdvertiserPayload.json");
 		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.cardPresentationMapList[]",
-				"publisherList");
+				"cardPresentationMapList[]");
 		TestStep.assertResponseContainsExpectedElement(strResponse, "_embedded.cardPresentationMapList[].objectId",
 				"objectId");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "_embedded.cardPresentationMapList[].externalId",
-				"externalId");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "_embedded.cardPresentationMapList[].name", "name");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "_embedded.cardPresentationMapList[].ein", "ein");
+		TestStep.assertResponseContainsExpectedElement(strResponse,
+				"_embedded.cardPresentationMapList[].cardPresentationCccomId", "cardPresentationCccomId");
+		TestStep.assertResponseContainsExpectedElement(strResponse,
+				"_embedded.cardPresentationMapList[].cardPresentationId", "cardPresentationId");
+		TestStep.assertResponseContainsExpectedElement(strResponse, "_embedded.cardPresentationMapList[].status",
+				"status");
 		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse,
-				"_embedded.cardPresentationMapList[].contact", "contact");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse,
-				"_embedded.cardPresentationMapList[].billing", "billing");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "_embedded.cardPresentationMapList[].termsOfUseId",
-				"termsOfUseId");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "_embedded.cardPresentationMapList[].active",
-				"active");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.publisherList[].websites",
-				"websites");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.publisherList[]._links",
-				"_links");
+				"_embedded.cardPresentationMapList[]._links", "links");
 
 	}
 }

@@ -17,7 +17,7 @@ public class Application {
 	private static Logger log = LogManager.getLogger(Application.class.getName());
 	private static final String applicationEndPoint = PropertiesFile.getConfig("mpp_application");
 
-	public String applyAsAdvertiser(String payLoadName) {
+	public static String applyForAdvertiser(String payLoadName) {
 		Response response;
 
 		String publishersPayload = PayLoadGenerator.generatePayLoadString(payLoadName);

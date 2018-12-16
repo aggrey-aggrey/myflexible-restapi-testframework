@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Publisher">
+	<test thread-count="5" name="Verify Publisher">
+		<groups>
+			<run>
+				<include name="PublisherTest" />
+				<exclude name="broken" />
+				<exclude name="blocked" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.redventures.api.mpp.service.PublishersTest" />
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

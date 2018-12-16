@@ -1,29 +1,4 @@
 {
-	"name": "The Round Rock publisher",
-	"contact": {
-		"name": "Round",
-		"surname": "Curry",
-		"city": "Austin",
-		"state": "Texas",
-		"address": "One demo circle",
-		"country": "United States",
-		"zip": "549034",
-		"email": "demo@cccom.com",
-		"phone": "489-489-2398",
-		"fax": "329-329-2093"
-	},
-	"billing":{
-        "name": "Round",
-        "surname": "Curry",
-        "address": "One demo circle",
-        "address2": null,
-        "city": "Austin",
-        "state": "Texas",
-        "zip": "549034",
-        "country": "United States",
-        "email": "demo@cccom.com",
-        "phone": "489-489-2398",
-        "fax": "329-329-2093"
-    },
-	"ein": "32-2467432"
+	"websiteId": 1,
+    "advertiserId": 150
 }

@@ -1,6 +1,7 @@
 package com.redventures.api.mpp.service;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.redventures.api.mpp.base.TestStep;
@@ -9,12 +10,13 @@ public class PublishersTest {
 	private static String strResponse;
 	Publishers publishers = new Publishers();
 
+	@BeforeMethod
 	@BeforeClass
 	public void setUp() {
 
 	}
 
-	@Test
+	@Test(groups = { "PublisherTest", "working" }, priority = 1)
 	public void createAPublisher() {
 		strResponse = publishers.addPublisher("addPublisherPayload.json");
 		TestStep.assertResponseContainsExpectedListOfElements(strResponse, "", "Object");
@@ -30,7 +32,7 @@ public class PublishersTest {
 		TestStep.assertResponseContainsExpectedListOfElements(strResponse, "_links", "_links");
 	}
 
-	@Test
+	@Test(groups = { "PublisherTest", "working" }, priority = 3)
 	public void listAllPublishers() {
 		strResponse = publishers.getAllPublishers();
 		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.publisherList[]",
@@ -54,10 +56,10 @@ public class PublishersTest {
 
 	}
 
-	@Test
+	@Test(groups = { "PublisherTest", "working" }, priority = 2)
 	public void returnASinglePublisher() {
 
-		strResponse = publishers.getAPublisher(2);
+		strResponse = publishers.getAPublisher(5);
 		TestStep.assertResponseContainsExpectedListOfElements(strResponse, "", "Object");
 		TestStep.assertResponseContainsExpectedElement(strResponse, "objectId", "objectId");
 		TestStep.assertResponseContainsExpectedElement(strResponse, "externalId", "externalId");
@@ -72,12 +74,12 @@ public class PublishersTest {
 
 	}
 
-	// @Test
+	@Test(groups = { "PublisherTest", "broken" })
 	public void updateAPublisher() {
-		publishers.putPublisher("updatedPublishersPayload.json", 2);
+		publishers.putPublisher("updatedPublishersPayload.json", 5);
 	}
 
-	@Test
+	@Test(groups = { "PublisherTest", "working" }, priority = 4)
 	public void addAWebsiteForPublisher() {
 
 		strResponse = Websites.addWebsite(2, "addwebsitePayload.json");
@@ -89,9 +91,9 @@ public class PublishersTest {
 		TestStep.assertResponseContainsExpectedElement(strResponse, "active", "active");
 	}
 
-	@Test
+	@Test(groups = { "PublisherTest", "working" }, priority = 5)
 	public void listAPublisherWebsite() {
-		strResponse = publishers.listAwebsiteForPublisher(2, 3);
+		strResponse = publishers.listAwebsiteForPublisher(5, 5);
 
 		TestStep.assertResponseContainsExpectedElement(strResponse, "objectId", "objectId");
 		TestStep.assertResponseContainsExpectedElement(strResponse, "externalId", "externalId");
@@ -102,9 +104,9 @@ public class PublishersTest {
 		TestStep.assertResponseContainsExpectedListOfElements(strResponse, "_links", "links");
 	}
 
-	@Test
+	@Test(groups = { "PublisherTest", "working" }, priority = 6)
 	public void listAllPublisherWebsites() {
-		strResponse = publishers.listAllWebsitesForPublisher(2);
+		strResponse = publishers.listAllWebsitesForPublisher(5);
 
 		TestStep.assertResponseContainsExpectedListOfElements(strResponse, "_embedded", "_embedded");
 		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.websiteList[]",
@@ -112,9 +114,9 @@ public class PublishersTest {
 
 	}
 
-	// @Test
+	@Test(groups = { "PublisherTest", "blocked" })
 	public void deleteAPublisher() {
-		strResponse = publishers.deletePublisher(11);
+		strResponse = publishers.deletePublisher(6);
 
 	}
 

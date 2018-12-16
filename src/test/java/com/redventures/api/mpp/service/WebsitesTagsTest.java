@@ -7,7 +7,7 @@ import com.redventures.api.mpp.base.TestStep;
 public class WebsitesTagsTest {
 	private static String strResponse;
 
-	@Test
+	@Test(priority = 1)
 	public void addAWebsiteTag() {
 		strResponse = WebsitesTags.addAWebsiteTag("addWebsiteTagsPayload.json");
 
@@ -19,7 +19,7 @@ public class WebsitesTagsTest {
 		TestStep.assertResponseContainsExpectedElement(strResponse, "_links.self.href", "href");
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void getAWebsiteTag() {
 		strResponse = WebsitesTags.getAWebsiteTag(2);
 
@@ -31,7 +31,7 @@ public class WebsitesTagsTest {
 		TestStep.assertResponseContainsExpectedElement(strResponse, "_links.self.href", "href");
 	}
 
-	@Test
+	@Test(priority = 3)
 	public void listAllWebsiteTags() {
 		strResponse = WebsitesTags.listAllWebsiteTags();
 
@@ -49,8 +49,8 @@ public class WebsitesTagsTest {
 				"_embedded.websiteTagList[].description._links.self.href", "href");
 	}
 
-	// @Test
+	@Test(priority = 4)
 	public void deleteAWebsiteTag() {
-		strResponse = WebsitesTags.deleteAWebsiteTag(1);
+		strResponse = WebsitesTags.deleteAWebsiteTag(3);
 	}
 }
