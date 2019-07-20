@@ -1,4 +1,4 @@
-package com.redventures.api.mpp.base;
+package com.aggrey.api.base;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

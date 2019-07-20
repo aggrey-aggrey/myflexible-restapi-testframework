@@ -1,4 +1,4 @@
-package com.redventures.api.mpp.base;
+package com.aggrey.api.base;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,7 +10,7 @@ import java.util.Set;
 
 import org.testng.Assert;
 
-import com.redventures.api.mpp.utils.TestUtils;
+import com.aggrey.api.base.utils.TestUtils;
 
 import io.restassured.path.json.JsonPath;
 

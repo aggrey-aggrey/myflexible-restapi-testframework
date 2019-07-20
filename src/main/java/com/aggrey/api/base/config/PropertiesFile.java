@@ -1,4 +1,4 @@
-package com.redventures.api.mpp.config;
+package com.aggrey.api.base.config;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +13,7 @@ public class PropertiesFile {
 	public Properties properties;
 	public File file;
 	public FileInputStream fileinputstream;
-	private static String configPath = "/src/main/java/com/redventures/api/mpp/config/";
+	private static String configPath = "/src/main/java/com/aggrey/api/base/config/";
 
 	public void loadPropertiesFile() throws IOException {
 		properties = new Properties();

@@ -10,7 +10,10 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.redventures.api.mpp.service.PublishersTest" />
+			<class name="com.aggrey.api.mpp.service.PublishersTest" />
+			 <class name="com.aggrey.api.mpp.service.WebsitesTest"/>
+			 <class name="com.aggrey.api.mpp.service.WebsitesTagsTest"/>
+
 
 		</classes>
 	</test> <!-- Test -->

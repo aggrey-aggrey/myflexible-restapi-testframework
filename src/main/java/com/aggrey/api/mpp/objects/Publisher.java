@@ -1,4 +1,4 @@
-package com.redventures.api.mpp.objects;
+package com.aggrey.api.mpp.objects;
 
 public class Publisher {
 

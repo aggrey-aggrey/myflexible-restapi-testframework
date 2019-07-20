@@ -1,14 +1,14 @@
-package com.redventures.api.mpp.service;
+package com.aggrey.api.mpp.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.redventures.api.mpp.base.BaseAssertions;
-import com.redventures.api.mpp.base.RestCalls;
-import com.redventures.api.mpp.config.PropertiesFile;
-import com.redventures.api.mpp.utils.ApplicationUrl;
-import com.redventures.api.mpp.utils.PayLoadGenerator;
-import com.redventures.api.mpp.utils.TestUtils;
+import com.aggrey.api.base.BaseAssertions;
+import com.aggrey.api.base.RestCalls;
+import com.aggrey.api.base.config.PropertiesFile;
+import com.aggrey.api.base.utils.ApplicationUrl;
+import com.aggrey.api.base.utils.PayLoadGenerator;
+import com.aggrey.api.base.utils.TestUtils;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

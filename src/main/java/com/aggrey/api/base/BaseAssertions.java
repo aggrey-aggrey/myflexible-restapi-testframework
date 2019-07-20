@@ -1,10 +1,10 @@
-package com.redventures.api.mpp.base;
+package com.aggrey.api.base;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 
-import com.redventures.api.mpp.utils.TestUtils;
+import com.aggrey.api.base.utils.TestUtils;
 
 import io.restassured.response.Response;
 
