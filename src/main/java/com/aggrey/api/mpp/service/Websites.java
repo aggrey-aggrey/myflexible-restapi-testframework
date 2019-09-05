@@ -4,11 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.aggrey.api.base.BaseAssertions;
-import com.aggrey.api.base.RestCalls;
 import com.aggrey.api.base.config.PropertiesFile;
 import com.aggrey.api.base.utils.ApplicationUrl;
 import com.aggrey.api.base.utils.PayLoadGenerator;
 import com.aggrey.api.base.utils.TestUtils;
+import com.aggrey.api.project.restcalls.MediaPartnerRestCalls;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -18,13 +18,14 @@ public class Websites {
 	private static final String websitesEndPoint = PropertiesFile.getConfig("mpp_websites");
 	private static final String publishersEndPoint = PropertiesFile.getConfig("mpp_publishers");
 	private static String resource;
+	static MediaPartnerRestCalls mediaCalls = new MediaPartnerRestCalls();
 
 	public static String getAWebsite(int websiteId) {
 
 		Response response;
 
 		String endPointURI = ApplicationUrl.getEndPoint(websitesEndPoint + "/" + websiteId);
-		response = RestCalls.GETRequest(endPointURI);
+		response = mediaCalls.GETRequest(endPointURI);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 200);
@@ -43,7 +44,7 @@ public class Websites {
 		String websitesPayload = PayLoadGenerator.generatePayLoadString(payloadName);
 
 		String endPointURI = ApplicationUrl.getEndPoint(publishersEndPoint + "/" + publisherId + "/" + "websites");
-		response = RestCalls.POSTRequest(endPointURI, websitesPayload);
+		response = mediaCalls.POSTRequest(endPointURI, websitesPayload);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 201);
@@ -57,12 +58,12 @@ public class Websites {
 		return strResponse;
 	}
 
-	public static String listAllWebsites() {
+	public String listAllWebsites() {
 
 		Response response;
 
 		String endPointURI = ApplicationUrl.getEndPoint(websitesEndPoint);
-		response = RestCalls.GETRequest(endPointURI);
+		response = mediaCalls.GETRequest(endPointURI);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 200);
@@ -82,7 +83,7 @@ public class Websites {
 
 		String endPointURI = ApplicationUrl
 				.getEndPoint(publishersEndPoint + "/" + publisherId + "/" + "websites" + "/" + websiteId);
-		response = RestCalls.PUTRequest(endPointURI, websitesPayload);
+		response = mediaCalls.PUTRequest(endPointURI, websitesPayload, websiteId);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 201);
@@ -101,7 +102,7 @@ public class Websites {
 
 		String endPointURI = ApplicationUrl
 				.getEndPoint(publishersEndPoint + "/" + publisherId + "/" + "websites" + "/" + websiteId);
-		response = RestCalls.DELETERequest(endPointURI);
+		response = mediaCalls.DELETERequest(endPointURI);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 204);
@@ -120,7 +121,7 @@ public class Websites {
 		Response response;
 
 		String endPointURI = ApplicationUrl.getEndPoint(websitesEndPoint);
-		response = RestCalls.GETRequest(endPointURI);
+		response = mediaCalls.GETRequest(endPointURI);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 200);

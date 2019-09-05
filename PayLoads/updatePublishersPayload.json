@@ -1,6 +1,329 @@
 {
-	"name": "TPG  Mommy Pointssite",
-	"url": "tpgmommy.com",
-	"description": "tpg mommy site",
-	"active": true
+objectId: 3,
+externalId: "beb3ffd4-0ee9-11e9-a8e5-0642052b5aa0",
+name: "",
+ein: "94-3319956",
+contact: {
+name: "John",
+surname: "Ellinthorpe",
+address: "2000 Powell Street",
+address2: null,
+city: "Emeryville",
+state: "CA",
+zip: "94608",
+country: "United States",
+email: "jellinthorpe@ziprealty.com",
+phone: "510-735-2635",
+fax: "866-827-3643"
+},
+billing: {
+name: "",
+surname: "",
+address: "",
+address2: "",
+city: "",
+state: "",
+zip: "",
+country: "",
+email: "jellinthorpe@ziprealty.com",
+phone: "510-735-2635",
+fax: "866-827-3643"
+},
+termsOfUseId: 1,
+active: null,
+websites: [
+{
+objectId: 13,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 33,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 38,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 78,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 98,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 103,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 131,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 151,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 156,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 181,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 201,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 206,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 234,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 254,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 259,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 285,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 305,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 310,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 336,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 356,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 361,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 393,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 413,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 418,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 443,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 463,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 468,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 493,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 513,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 518,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 543,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 563,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 568,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+},
+{
+objectId: 593,
+externalId: "0e229732-0eeb-11e9-a8e5-0642052b5aa0",
+name: "bubba.cardsdev.com",
+url: "http://bubba.cardsdev.com",
+description: null,
+active: true
+},
+{
+objectId: 613,
+externalId: "0e22981b-0eeb-11e9-a8e5-0642052b5aa0",
+name: "AT&T.com",
+url: "http://att.com",
+description: null,
+active: true
+},
+{
+objectId: 618,
+externalId: "0e229846-0eeb-11e9-a8e5-0642052b5aa0",
+name: "TEST TEST",
+url: "test.test",
+description: null,
+active: true
+}
+],
+_links: {
+self: {
+href: "http://localhost:8080/publishers/3"
+}
+}
 }

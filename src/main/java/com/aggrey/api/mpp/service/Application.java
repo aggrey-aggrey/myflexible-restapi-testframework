@@ -4,11 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.aggrey.api.base.BaseAssertions;
-import com.aggrey.api.base.RestCalls;
 import com.aggrey.api.base.config.PropertiesFile;
 import com.aggrey.api.base.utils.ApplicationUrl;
 import com.aggrey.api.base.utils.PayLoadGenerator;
 import com.aggrey.api.base.utils.TestUtils;
+import com.aggrey.api.project.restcalls.MediaPartnerRestCalls;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -16,6 +16,7 @@ import io.restassured.response.Response;
 public class Application {
 	private static Logger log = LogManager.getLogger(Application.class.getName());
 	private static final String applicationEndPoint = PropertiesFile.getConfig("mpp_application");
+	static MediaPartnerRestCalls mediaCalls = new MediaPartnerRestCalls();
 
 	public static String applyForAdvertiser(String payLoadName) {
 		Response response;
@@ -23,7 +24,7 @@ public class Application {
 		String publishersPayload = PayLoadGenerator.generatePayLoadString(payLoadName);
 
 		String endPointURI = ApplicationUrl.getEndPoint(applicationEndPoint);
-		response = RestCalls.POSTRequest(endPointURI, publishersPayload);
+		response = mediaCalls.POSTRequest(endPointURI, publishersPayload);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 201);

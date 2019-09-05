@@ -1,51 +1,55 @@
-package com.redventures.api.mpp.service;
+package com.aggrey.api.mpp.service;
 
 import org.testng.annotations.Test;
 
-import com.redventures.api.mpp.base.TestStep;
+import com.aggrey.api.project.teststeps.MediaPartnerTestSteps;
 
 public class WebsitesTagsTest {
 	private static String strResponse;
 
+	@SuppressWarnings("rawtypes")
+	static MediaPartnerTestSteps mppTestStep = new MediaPartnerTestSteps(null, null, null);
+
 	@Test(priority = 1)
+
 	public void addAWebsiteTag() {
 		strResponse = WebsitesTags.addAWebsiteTag("addWebsiteTagsPayload.json");
 
-		TestStep.assertResponseContainsExpectedElement(strResponse, "objectId", "objectId");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "externalId", "externalId");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "name", "name");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "description", "description");
-		TestStep.assertResponseContainsExpectedListOfElements(strResponse, "_links", "links");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "_links.self.href", "href");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "objectId", "objectId");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "externalId", "externalId");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "name", "name");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "description", "description");
+		mppTestStep.assertResponseContainsExpectedListOfElements(strResponse, "_links", "links");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "_links.self.href", "href");
 	}
 
 	@Test(priority = 2)
 	public void getAWebsiteTag() {
 		strResponse = WebsitesTags.getAWebsiteTag(2);
 
-		TestStep.assertResponseContainsExpectedElement(strResponse, "objectId", "objectId");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "externalId", "externalId");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "name", "name");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "description", "description");
-		TestStep.assertResponseContainsExpectedListOfElements(strResponse, "_links", "links");
-		TestStep.assertResponseContainsExpectedElement(strResponse, "_links.self.href", "href");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "objectId", "objectId");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "externalId", "externalId");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "name", "name");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "description", "description");
+		mppTestStep.assertResponseContainsExpectedListOfElements(strResponse, "_links", "links");
+		mppTestStep.assertResponseContainsExpectedElement(strResponse, "_links.self.href", "href");
 	}
 
 	@Test(priority = 3)
 	public void listAllWebsiteTags() {
 		strResponse = WebsitesTags.listAllWebsiteTags();
 
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.websiteTagList[]",
+		mppTestStep.assertResponseContainsExpectedArrayOfElements(strResponse, "_embedded.websiteTagList[]",
 				"websiteTagList");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.websiteTagList[].objectId",
+		mppTestStep.assertResponseContainsExpectedArrayOfElements(strResponse, "_embedded.websiteTagList[].objectId",
 				"objectId");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse, "_embedded.websiteTagList[].name",
+		mppTestStep.assertResponseContainsExpectedArrayOfElements(strResponse, "_embedded.websiteTagList[].name",
 				"name");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse,
-				"_embedded.websiteTagList[].description", "description");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse,
+		mppTestStep.assertResponseContainsExpectedArrayOfElements(strResponse, "_embedded.websiteTagList[].description",
+				"description");
+		mppTestStep.assertResponseContainsExpectedArrayOfElements(strResponse,
 				"_embedded.websiteTagList[].description._links", "_links");
-		TestStep.assertResponseContainsExpectedArrayListOfElements(strResponse,
+		mppTestStep.assertResponseContainsExpectedArrayOfElements(strResponse,
 				"_embedded.websiteTagList[].description._links.self.href", "href");
 	}
 

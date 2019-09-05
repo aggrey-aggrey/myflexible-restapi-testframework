@@ -4,11 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.aggrey.api.base.BaseAssertions;
-import com.aggrey.api.base.RestCalls;
 import com.aggrey.api.base.config.PropertiesFile;
 import com.aggrey.api.base.utils.ApplicationUrl;
 import com.aggrey.api.base.utils.PayLoadGenerator;
 import com.aggrey.api.base.utils.TestUtils;
+import com.aggrey.api.project.restcalls.MediaPartnerRestCalls;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -16,13 +16,14 @@ import io.restassured.response.Response;
 public class WebsitesTags {
 	private static Logger log = LogManager.getLogger(WebsitesTags.class.getName());
 	private static final String websiteTagsEndPoint = PropertiesFile.getConfig("mpp_websiteTags");
+	static MediaPartnerRestCalls mediaCalls = new MediaPartnerRestCalls();
 
 	public static String getAWebsiteTag(int websiteTagId) {
 
 		Response response;
 
 		String endPointURI = ApplicationUrl.getEndPoint(websiteTagsEndPoint + "/" + websiteTagId);
-		response = RestCalls.GETRequest(endPointURI);
+		response = mediaCalls.GETRequest(endPointURI);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 200);
@@ -41,7 +42,7 @@ public class WebsitesTags {
 		String websitesPayload = PayLoadGenerator.generatePayLoadString(payloadName);
 
 		String endPointURI = ApplicationUrl.getEndPoint(websiteTagsEndPoint);
-		response = RestCalls.POSTRequest(endPointURI, websitesPayload);
+		response = mediaCalls.POSTRequest(endPointURI, websitesPayload);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 201);
@@ -60,7 +61,7 @@ public class WebsitesTags {
 		Response response;
 
 		String endPointURI = ApplicationUrl.getEndPoint(websiteTagsEndPoint);
-		response = RestCalls.GETRequest(endPointURI);
+		response = mediaCalls.GETRequest(endPointURI);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 200);
@@ -73,14 +74,14 @@ public class WebsitesTags {
 		return strResponse;
 	}
 
-	public static String putWebsiteTag(int publisherId, int websiteTagId, String payloadName) {
+	public String putWebsiteTag(int publisherId, int websiteTagId, String payloadName) {
 		Response response;
 
 		String websitesPayload = PayLoadGenerator.generatePayLoadString(payloadName);
 
 		String endPointURI = ApplicationUrl
 				.getEndPoint(websiteTagsEndPoint + "/" + publisherId + "/" + "websites" + "/" + websiteTagId);
-		response = RestCalls.PUTRequest(endPointURI, websitesPayload);
+		response = mediaCalls.PUTRequest(endPointURI, websitesPayload, websiteTagId);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 201);
@@ -98,7 +99,7 @@ public class WebsitesTags {
 		Response response;
 
 		String endPointURI = ApplicationUrl.getEndPoint(websiteTagsEndPoint + "/" + websiteTagId);
-		response = RestCalls.DELETERequest(endPointURI);
+		response = mediaCalls.DELETERequest(endPointURI);
 
 		TestUtils.getStatusMessage(response);
 		BaseAssertions.verifyStatusCode(response, 204);
